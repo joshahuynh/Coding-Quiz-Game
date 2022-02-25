@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- view high score -->
+    <div class="scores"><a href="view-scores.html" id="score-link">View high scores</a>
+    </div>
+
+    <!-- time section -->
+    <div class="time">Time: <span id="time">0</span>
+    </div>
+
+    <!-- primary screen -->
+    <div class="screen">
+      <div class="main" id="main-screen">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          Try to answer the following code-related questions within the time limit
+          Keep in mind that incorrect answers will penalize your score/time 
+          by ten seconds
+        </p>
+        <button id="startBtn">Start Quiz</button>
+      </div>
+
+      <div class= "clear" id="question">
+        <h2 id="question-title"></h2>
+        <div class="multiple-choice" id="choices"></div>
+      </div>
+
+      <div class= "clear" id="final-screen">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initial" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+
+      <div class="check-answer" id="check-answer"></div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
