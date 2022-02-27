@@ -88,7 +88,7 @@ var clickQuestion = function() {
     answerCheckEl.setAttribute("class", "check-answer");
     setTimeout(function() {
         answerCheckEl.setAttribute("class", "check-answers");
-    }, 1000);
+    }, 100000);
 
     questionIndex++;
 
@@ -109,4 +109,26 @@ var endQuiz = function() {
     questionEl.setAttribute("class", "clear")
 };
 
-startBtn.oneclick = startQuiz;
+var saveScores = function () {
+    var name = initialEl.value.trim();
+  
+    if (name !== "") {
+        var highScore =
+            JSON.parse(window.localStorage.getItem("highscore")) || [];
+  
+        var scoreNew = {
+            score: time,
+            initial: name
+        };
+  
+        highScore.push(scoreNew);
+        window.localStorage.setItem("highscore", JSON.stringify(highScore));
+  
+        // put view high score page here
+        window.location.href = "view-scores.html";
+  
+    }
+  }
+  
+submitBtn.onclick = saveScores;
+startBtn.onclick = startQuiz;
