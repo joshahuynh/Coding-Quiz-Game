@@ -87,8 +87,8 @@ var clickQuestion = function() {
 
     answerCheckEl.setAttribute("class", "check-answer");
     setTimeout(function() {
-        answerCheckEl.setAttribute("class", "check-answers");
-    }, 100000);
+        answerCheckEl.setAttribute("class", "check-answer clear");
+    }, 1000);
 
     questionIndex++;
 
@@ -124,8 +124,7 @@ var saveScores = function () {
         highScore.push(scoreNew);
         window.localStorage.setItem("highscore", JSON.stringify(highScore));
   
-        // put view high score page here
-        window.location.href = "view-scores.html";
+        window.location.href = "highscores.html";
   
     }
   }
